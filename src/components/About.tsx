@@ -1,4 +1,8 @@
+
 import React from 'react';
+import moontownPromo1 from './assets/Moontown - 01 preview.mp4';
+import moontownPromo2 from './assets/Moontown - 02 preview.mp4';
+import AboutUS from './assets/about us.jpg';
 
 export default function About() {
   return (
@@ -28,13 +32,14 @@ export default function About() {
           </div>
 
           {/* Right Content - Main Video */}
-          <div className="rounded-lg overflow-hidden shadow-md animate-slide-left">
-            <img
-              src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
-              alt="Theater Experience"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <div className="relative">
+                <img
+                  src={AboutUS}
+                  alt="Premium Store"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+          
         </div>
 
         {/* As Seen on Media Section */}
@@ -45,13 +50,12 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* First Media Card */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                  alt="Premium Store"
-                  className="w-full h-64 object-cover"
-                />
-              </div>
+            <div className="rounded-lg overflow-hidden shadow-md animate-slide-left">
+            <video className="w-full h-full object-cover" controls>
+              <source src={moontownPromo1} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
               <div className="p-4">
                 <h4 className="text-xl font-semibold mb-2">
                   Experience Our Premium Store
@@ -67,11 +71,10 @@ export default function About() {
             {/* Second Media Card */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
               <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                  alt="Luxurious Setting"
-                  className="w-full h-64 object-cover"
-                />
+                <video className="w-full h-64 object-cover" controls>
+                  <source src={moontownPromo2} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div className="p-4">
                 <h4 className="text-xl font-semibold mb-2">
