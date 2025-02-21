@@ -1,5 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Filter } from 'lucide-react';
+// import Interior from './assets/images/photo1.jpg';
+// import Interior1 from './assets/images/photo2.jpg';
+// import Interior2 from './assets/images/photo3.jpg';
+// import Interior3 from './assets/images/photo4.jpg';
+// import Interior4 from './assets/images/photo5.jpg';
+
+// import Seating from './assets/images/photo6.jpg';
+// import Seating1 from './assets/images/photo7.jpg';
+// import Seating2 from './assets/images/photo8.jpg';
+// import Seating3 from './assets/images/photo9.jpg';
+// import Seating4 from './assets/images/photo10.jpg';
+
+// import Theater from './assets/images/photo11.jpg';
+// import Theater1 from './assets/images/photo12.jpg';
+// import Theater2 from './assets/images/photo13.jpg';
+// import Theater3 from './assets/images/photo14.jpg';
+// import Theater4 from './assets/images/photo15.jpg';
+
+// import Sound from './assets/images/photo16.jpg';
+// import Sound1 from './assets/images/photo17.jpg';
+// import Sound2 from './assets/images/photo18.jpg';
+// import Sound3 from './assets/images/photo19.jpg';
+// import Sound4 from './assets/images/photo20.jpg';
+
+// import Ambiance from './assets/ambiance/ambience.jpg';
+// import Ambiance1 from './assets/ambiance/ambience1.jpg';
+// import Ambiance2 from './assets/ambiance/ambience2.jpg';
+// import Ambiance3 from './assets/ambiance/ambience3.jpg';
+// import Ambiance4 from './assets/ambiance/ambience4.jpg';
+
+
+
+
 
 const Gallery = () => {
   type GalleryImage = {
@@ -16,168 +49,168 @@ const Gallery = () => {
 
   const galleryImages: GalleryImage[] = [
     {
-      url: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c",
+      url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//interior1.jpeg",
       title: "Luxury Theater Interior",
       category: "Interior",
       description: "Experience premium comfort in our state-of-the-art theater",
       nestedImages: [
         {
-          url: "https://images.unsplash.com/photo-1504123010103-b1f3fe484a32",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//interior2.jpeg",
           title: "Premium Seating Area",
           description: "Luxurious reclining seats for ultimate comfort"
         },
         {
-          url: "https://images.unsplash.com/photo-1593784991095-a205069470b6",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//interior3.jpeg",
           title: "Theater Lighting",
           description: "Ambient lighting for the perfect atmosphere"
         },
         {
-          url: "https://images.unsplash.com/photo-1510511233900-1982d92bd835",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//interior.JPG",
           title: "Sound System",
           description: "State-of-the-art surround sound experience"
         },
         {
-          url: "https://images.unsplash.com/photo-1513106580091-1d82408b8cd6",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//interior4.jpeg",
           title: "Ambiance Details",
           description: "Carefully curated interior elements"
         }
       ]
     },
     {
-      url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+      url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//screening1.jpg",
       title: "Premium Screening Room",
       category: "Screening",
       description: "State-of-the-art projection and sound system",
       nestedImages: [
         {
-          url: "https://images.unsplash.com/photo-1595769816263-9b910be24d5f",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//screening.jpg",
           title: "4K Projection",
           description: "Crystal clear picture quality"
         },
         {
-          url: "https://images.unsplash.com/photo-1585647347384-2593bc35786b",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//screening2.jpg",
           title: "Surround Sound",
           description: "Immersive audio experience"
         },
         {
-          url: "https://images.unsplash.com/photo-1586899028174-e7098604235b",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//ambience4.jpg",
           title: "Screen Setup",
           description: "Professional cinema screen"
         },
         {
-          url: "https://images.unsplash.com/photo-1536440136628-849c177e76a1",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//interior.JPG",
           title: "Lighting System",
           description: "Perfect ambiance control"
         }
       ]
     },
     {
-      url: "https://images.unsplash.com/photo-1595769816263-9b910be24d5f",
+      url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//couples.jpg",
       title: "Couple's Theater",
       category: "Romance",
       description: "Perfect setting for romantic dates",
       nestedImages: [
         {
-          url: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//coulples1.jpeg",
           title: "Intimate Setting",
           description: "Cozy and private atmosphere"
         },
         {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//interior1.jpeg",
           title: "Luxury Seating",
           description: "Comfortable couple seating"
         },
         {
-          url: "https://images.unsplash.com/photo-1536440136628-849c177e76a1",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//coulples2.jpeg",
           title: "Mood Lighting",
           description: "Romantic ambiance"
         },
         {
-          url: "https://images.unsplash.com/photo-1585647347384-2593bc35786b",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//ambience1.jpg",
           title: "Service Area",
           description: "Premium refreshments service"
         }
       ]
     },
     {
-      url: "https://images.unsplash.com/photo-1536440136628-849c177e76a1",
+      url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//celebration.jpeg",
       title: "Birthday Celebrations",
       category: "Events",
       description: "Make your birthday extra special",
       nestedImages: [
         {
-          url: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//celebration1.jpg",
           title: "Party Setup",
           description: "Festive decorations and arrangements"
         },
         {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//celebration2.jpg",
           title: "Group Seating",
           description: "Comfortable space for friends and family"
         },
         {
-          url: "https://images.unsplash.com/photo-1595769816263-9b910be24d5f",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//interior1.jpeg",
           title: "Celebration Area",
           description: "Perfect for cake cutting and photos"
         },
         {
-          url: "https://images.unsplash.com/photo-1585647347384-2593bc35786b",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//ambience1.jpg",
           title: "Entertainment Setup",
           description: "Music and lighting arrangements"
         }
       ]
     },
     {
-      url: "https://images.unsplash.com/photo-1585647347384-2593bc35786b",
+      url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//snacks1.jpg",
       title: "Refreshment Service",
       category: "Service",
       description: "Premium food and beverage options",
       nestedImages: [
         {
-          url: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//snack2.jpg",
           title: "Snack Counter",
           description: "Wide variety of premium snacks"
         },
         {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//snack3.JPG",
           title: "Beverage Station",
           description: "Refreshing drink selections"
         },
         {
-          url: "https://images.unsplash.com/photo-1595769816263-9b910be24d5f",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//snack4.jpeg",
           title: "Service Area",
           description: "Professional service setup"
         },
         {
-          url: "https://images.unsplash.com/photo-1536440136628-849c177e76a1",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//snack.jpeg",
           title: "Premium Options",
           description: "Gourmet food selections"
         }
       ]
     },
     {
-      url: "https://images.unsplash.com/photo-1586899028174-e7098604235b",
+      url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//ambience1.jpg",
       title: "Special Occasions",
       category: "Events",
       description: "Perfect for any celebration",
       nestedImages: [
         {
-          url: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//ambience.jpg",
           title: "Event Setup",
           description: "Customizable arrangements"
         },
         {
-          url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//ambience3.jpg",
           title: "Decoration Options",
           description: "Themed decoration services"
         },
         {
-          url: "https://images.unsplash.com/photo-1595769816263-9b910be24d5f",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//ambience2.jpg",
           title: "Celebration Space",
           description: "Versatile event area"
         },
         {
-          url: "https://images.unsplash.com/photo-1536440136628-849c177e76a1",
+          url: "https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//ambience4.jpg",
           title: "Group Activities",
           description: "Entertainment options"
         }

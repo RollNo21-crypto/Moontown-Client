@@ -31,7 +31,7 @@ export default function BookingSummary({ bookingData, totalPrice }: BookingSumma
           <span>{bookingData.time || 'Not selected'}</span>
 
           <span className="font-medium">Package:</span>
-          <span>{bookingData.package || 'Not selected'}</span>
+          <span>{'Gold Package' || 'Not selected'}</span>
 
           <span className="font-medium">Occasion:</span>
           <span>{bookingData.occasion || 'Not selected'}</span>

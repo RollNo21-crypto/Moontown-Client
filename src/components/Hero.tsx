@@ -21,7 +21,7 @@ export default function Hero({ onBookNow }: HeroProps) {
         </video>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white">
-            <h1 className="text-5xl font-bold mb-4">Experience Cinema Like Never Before</h1>
+            <h1 className="text-5xl font-bold mb-4">Bangalore's #1 Luxury Private Celebrations Venue </h1>
             <p className="text-xl mb-8">Book your private theater experience today</p>
             <div className="space-x-4">
               <button

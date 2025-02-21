@@ -5,14 +5,15 @@ export const calculatePrice = (bookingData: BookingFormData): number => {
 
   // Base package price
   const packagePrices: Record<string, number> = {
-    'Family Theatre - 1599': 1599,
-    'Couples Theatre - 1111': 1111,
-    'Friends Theatre - 1599': 1599
+    'Family Theatre - 1599': 1999,
+    'Couples Theatre - 1111': 999,
+    'Friends Theatre - 1599': 1999
   };
   totalPrice += packagePrices[bookingData.package] || 0;
 
   // Cake price
   const cakePrices: Record<string, number> = {
+    'No Cake - 0':0,
     'Chocolate Cake - 500': 500,
     'Black Forest Cake - 500': 500,
     'Butterscotch Cake - 500': 500,
@@ -30,7 +31,7 @@ export const calculatePrice = (bookingData: BookingFormData): number => {
 
   // Gold Package
   if (bookingData.needs_package === 'Yes') {
-    totalPrice += (bookingData.package === 'Couples Theatre - 1111') ? 2000 : 2500;
+    totalPrice += (bookingData.package === 'Couples Theatre - 1111') ? 500 : 1000;
   } else {
     // Individual add-ons
     if (bookingData.additional_options.decoration) totalPrice += 500;
@@ -38,6 +39,7 @@ export const calculatePrice = (bookingData: BookingFormData): number => {
     
     // Fog Entry
     const fogPrices: Record<string, number> = {
+      'No - 0':0,
       '1 pot - 300': 300,
       '2 pots - 500': 500,
       '3 pots - 700': 700,

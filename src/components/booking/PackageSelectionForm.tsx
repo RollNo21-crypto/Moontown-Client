@@ -42,9 +42,9 @@ export default function PackageSelectionForm({
           onChange={(e) => onPackageChange('package', e.target.value)}
         >
           <option value="">Select a package</option>
-          <option value="Family Theatre - 1599">Family Theatre - ₹1599</option>
-          <option value="Couples Theatre - 1111">Couples Theatre - ₹1111</option>
-          <option value="Friends Theatre - 1599">Friends Theatre - ₹1599</option>
+          <option value="Family Theatre - 1599">Family Theatre - ₹1999</option>
+          <option value="Couples Theatre - 1111">Couples Theatre - ₹999</option>
+          <option value="Friends Theatre - 1599">Friends Theatre - ₹1999</option>
         </select>
       </div>
 
@@ -63,6 +63,7 @@ export default function PackageSelectionForm({
           onChange={(e) => onPackageChange('cake', e.target.value)}
         >
           <option value="">Select a cake</option>
+          <option value="NoCake - 0">Not Required</option>
           <option value="Chocolate Cake - 500">Chocolate Cake - ₹500</option>
           <option value="Black Forest Cake - 500">Black Forest Cake - ₹500</option>
           <option value="Butterscotch Cake - 500">Butterscotch Cake - ₹500</option>
@@ -103,8 +104,8 @@ export default function PackageSelectionForm({
           <h3 className="text-lg font-semibold mb-4">Gold Package Details</h3>
           <p className="text-lg text-indigo-600 font-medium mb-4">
             {selectedPackage === 'Family Theatre - 1599' || selectedPackage === 'Friends Theatre - 1599'
-              ? 'Gold Package Price: ₹2500'
-              : 'Gold Package Price: ₹2000'}
+              ? 'Gold Package Price: ₹1000'
+              : 'Gold Package Price: ₹500'}
           </p>
           <ul className="space-y-2 text-gray-600">
             <li className="flex items-center gap-2">
@@ -117,7 +118,7 @@ export default function PackageSelectionForm({
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
-              Photography & Videography (with edits)
+              Photography & Videography (40 sec edit)
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
@@ -153,6 +154,7 @@ export default function PackageSelectionForm({
               onChange={(e) => onAdditionalOptionChange('fogEntry', e.target.value)}
             >
               <option value="">Select fog entry option</option>
+              <option value="No - 0">No - ₹0</option>
               <option value="1 pot - 300">1 pot - ₹300</option>
               <option value="2 pots - 500">2 pots - ₹500</option>
               <option value="3 pots - 700">3 pots - ₹700</option>

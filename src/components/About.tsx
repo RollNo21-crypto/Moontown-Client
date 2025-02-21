@@ -2,7 +2,7 @@
 import React from 'react';
 import moontownPromo1 from './assets/Moontown - 01 preview.mp4';
 import moontownPromo2 from './assets/Moontown - 02 preview.mp4';
-import AboutUS from './assets/about us.jpg';
+import AboutUS from './assets/MOONTOWN .png';
 
 export default function About() {
   return (
@@ -32,13 +32,15 @@ export default function About() {
           </div>
 
           {/* Right Content - Main Video */}
-          <div className="relative">
-                <img
-                  src={AboutUS}
-                  alt="Premium Store"
-                  className="w-full h-64 object-cover"
-                />
-              </div>
+          <div className="relative pt-4 pb-4 pl-8 pr-8">
+            <img
+              src={AboutUS}
+              alt="Premium Store"
+              className="w-full h-64 object-cover"
+            />
+          </div>
+
+
           
         </div>
 
@@ -71,7 +73,7 @@ export default function About() {
             {/* Second Media Card */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105">
               <div className="relative">
-                <video className="w-full h-64 object-cover" controls>
+                <video className="w-full h-auto object-cover" controls>
                   <source src={moontownPromo2} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
