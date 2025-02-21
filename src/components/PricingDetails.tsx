@@ -324,7 +324,7 @@ const PricingDetails = ({ onBookNow }: PricingDetailsProps) => {
       price: '₹1999',
       description: 'Ideal for friend gatherings',
       features: ['6-8 people', '2.5 Hours Duration', 'Premium Sound System', 'Comfortable Seating', 'Private Ambiance'],
-      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//C%20theater.mp4',
+      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//galaxy%20theater.mp4',
       images: [
         'https://images.pexels.com/photos/7991578/pexels-photo-7991578.jpeg',
         'https://images.pexels.com/photos/7991577/pexels-photo-7991577.jpeg',
@@ -336,7 +336,7 @@ const PricingDetails = ({ onBookNow }: PricingDetailsProps) => {
       price: '₹999',
       description: 'Romantic setting for couples',
       features: ['2 people', '2.5 Hours Duration', 'Premium Sound System', 'Couple Seating', 'Private Ambiance'],
-      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//galaxy%20theater.mp4',
+      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//C%20theater.mp4',
       images: [
         'https://images.pexels.com/photos/7991580/pexels-photo-7991580.jpeg',
         'https://images.pexels.com/photos/7991581/pexels-photo-7991581.jpeg',
