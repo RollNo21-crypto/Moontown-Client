@@ -324,7 +324,7 @@ const PricingDetails = ({ onBookNow }: PricingDetailsProps) => {
       price: '₹1999',
       description: 'Ideal for friend gatherings',
       features: ['6-8 people', '2.5 Hours Duration', 'Premium Sound System', 'Comfortable Seating', 'Private Ambiance'],
-      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//IMG_4831.MP4',
+      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//C%20theater.mp4',
       images: [
         'https://images.pexels.com/photos/7991578/pexels-photo-7991578.jpeg',
         'https://images.pexels.com/photos/7991577/pexels-photo-7991577.jpeg',
