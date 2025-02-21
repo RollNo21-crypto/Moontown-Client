@@ -19,9 +19,9 @@ export default function Home() {
       <Navbar />
       <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
       <Hero onBookNow={() => setIsBookingModalOpen(true)} />
-      <Services onBookNow={() => setIsBookingModalOpen(true)} />
-      <Gallery />
       <PricingDetails onBookNow={() => setIsBookingModalOpen(true)} />
+      <Gallery />
+      <Services onBookNow={() => setIsBookingModalOpen(true)} />
       <About />
       <RefundPolicy />
       <FAQs />
