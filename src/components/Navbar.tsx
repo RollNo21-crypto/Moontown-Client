@@ -71,12 +71,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <button 
-              onClick={() => navigateTo('/')} 
-              className="text-xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors"
-            >
-              TheaterBook
-            </button>
+          <button onClick={() => navigateTo('/')}>
+            <img 
+              src="https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//NEW%20LOGO%20MOONTOWN.png" 
+              alt="TheaterBook Logo" 
+              className="h-40 w-auto hover:opacity-80 transition-opacity"
+            />
+          </button>
           </div>
 
           {/* Desktop Navigation */}

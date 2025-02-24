@@ -6,8 +6,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">MoonTown</h3>
-            <p className="text-gray-400">Experience cinema like never before</p>
+          <div className="flex items-start">
+          <button onClick={() => navigateTo('/')}>
+            <img 
+              src="https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//moon%20town%20.png" 
+              alt="TheaterBook Logo" 
+              className="h-40 w-auto hover:opacity-80 transition-opacity"
+            />
+          </button>
+          </div>
+            {/* <h3 className="text-xl font-bold mb-4">MoonTown</h3> */}
+            <h3 className="text-gray-400 ">Experience cinema like never before</h3>
           </div>
           
           <div>
