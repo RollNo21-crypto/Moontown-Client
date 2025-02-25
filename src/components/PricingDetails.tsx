@@ -315,9 +315,9 @@ const PricingDetails = ({ onBookNow }: PricingDetailsProps) => {
       features: ['8-10 people', '2.5 Hours Duration', 'Premium Sound System', 'Comfortable Seating', 'Private Ambiance'],
       video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//milky%20way%20galaxy%20theater%20(1).mp4',
       images: [
-        'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg',
-        'https://images.pexels.com/photos/7991524/pexels-photo-7991524.jpeg',
-        'https://images.pexels.com/photos/7991486/pexels-photo-7991486.jpeg'
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room1/WhatsApp%20Image%202025-02-23%20at%2022.21.07_2167e21e.jpg',
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room1/WhatsApp%20Image%202025-02-23%20at%2022.23.39_7ee7a6f7.jpg',
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room1/WhatsApp%20Image%202025-02-23%20at%2022.24.55_f1359d9c.jpg'
       ]
     },
     {
@@ -327,9 +327,9 @@ const PricingDetails = ({ onBookNow }: PricingDetailsProps) => {
       features: ['6-8 people', '2.5 Hours Duration', 'Premium Sound System', 'Comfortable Seating', 'Private Ambiance'],
       video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//galaxy%20theater.mp4',
       images: [
-        'https://images.pexels.com/photos/7991578/pexels-photo-7991578.jpeg',
-        'https://images.pexels.com/photos/7991577/pexels-photo-7991577.jpeg',
-        'https://images.pexels.com/photos/7991576/pexels-photo-7991576.jpeg'
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room3/WhatsApp%20Image%202025-02-23%20at%2022.44.29_02935624.jpg',
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room3/WhatsApp%20Image%202025-02-23%20at%2022.44.29_cc71b87d.jpg',
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room3/WhatsApp%20Image%202025-02-23%20at%2022.46.16_0c22ba5e.jpg'
       ]
     },
     {
@@ -339,9 +339,9 @@ const PricingDetails = ({ onBookNow }: PricingDetailsProps) => {
       features: ['2 people', '2.5 Hours Duration', 'Premium Sound System', 'Couple Seating', 'Private Ambiance'],
       video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//C%20theater.mp4',
       images: [
-        'https://images.pexels.com/photos/7991580/pexels-photo-7991580.jpeg',
-        'https://images.pexels.com/photos/7991581/pexels-photo-7991581.jpeg',
-        'https://images.pexels.com/photos/7991582/pexels-photo-7991582.jpeg'
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room2/WhatsApp%20Image%202025-02-23%20at%2022.54.39_bcc00b8a.jpg',
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room2/WhatsApp%20Image%202025-02-23%20at%2022.54.38_613fed11.jpg',
+        'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room2/WhatsApp%20Image%202025-02-23%20at%2022.55.02_a903122b.jpg'
       ]
     }
   ];
