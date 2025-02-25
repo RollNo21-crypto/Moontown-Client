@@ -313,7 +313,7 @@ const PricingDetails = ({ onBookNow }: PricingDetailsProps) => {
       price: '₹1999',
       description: 'Perfect for family celebrations',
       features: ['8-10 people', '2.5 Hours Duration', 'Premium Sound System', 'Comfortable Seating', 'Private Ambiance'],
-      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//milky%20way%20galaxy%20theater%20(1).mp4',
+      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//galaxy%20theater.mp4',
       images: [
         'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room1/WhatsApp%20Image%202025-02-23%20at%2022.21.07_2167e21e.jpg',
         'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room1/WhatsApp%20Image%202025-02-23%20at%2022.23.39_7ee7a6f7.jpg',
@@ -325,7 +325,7 @@ const PricingDetails = ({ onBookNow }: PricingDetailsProps) => {
       price: '₹1999',
       description: 'Ideal for friend gatherings',
       features: ['6-8 people', '2.5 Hours Duration', 'Premium Sound System', 'Comfortable Seating', 'Private Ambiance'],
-      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//galaxy%20theater.mp4',
+      video: 'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images//milky%20way%20galaxy%20theater%20(1).mp4',
       images: [
         'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room3/WhatsApp%20Image%202025-02-23%20at%2022.44.29_02935624.jpg',
         'https://fhtaszlrpwhcxmgctsfx.supabase.co/storage/v1/object/public/images/room3/WhatsApp%20Image%202025-02-23%20at%2022.44.29_cc71b87d.jpg',
