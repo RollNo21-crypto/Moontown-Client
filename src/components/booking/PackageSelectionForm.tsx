@@ -80,8 +80,40 @@ export default function PackageSelectionForm({
       </div>
 
       {/* Gold Package Selection */}
-      <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+
+        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-indigo-600" />
+              <span>Do you want a Gold Package?</span>
+            </div>
+          </label>
+          <select
+            required
+            className={selectClasses}
+            value={needsPackage}
+            onChange={(e) => onPackageChange('needs_package', e.target.value)}
+          >
+            <option value="">Select an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+          {/* Gold Package Details (Always Visible) */}
+          <div className="mt-4 text-sm text-gray-600">
+            <p className="font-medium">What's included in the Gold Package:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>2.5 Hour Theatre</li>
+              <li>Decoration</li>
+              <li>Photography & Videography (with edit)</li>
+              <li>Fog Entry (4 pots)</li>
+            </ul>
+          </div>
+        </div> 
+
+      {/* <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
         <label className="block text-sm font-medium text-gray-700 mb-2">
+          
           <div className="flex items-center gap-2">
             <Users className="w-4 h-4 text-indigo-600" />
             <span>Do you want a Gold Package?</span>
@@ -97,11 +129,11 @@ export default function PackageSelectionForm({
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>
-      </div>
+      </div> */}
 
       {needsPackage === 'Yes' && (
         <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-          <h3 className="text-lg font-semibold mb-4">Gold Package Details</h3>
+          <h3 className="text-lg font-semibold mb-4">Selected Package Details</h3>
           <p className="text-lg text-indigo-600 font-medium mb-4">
             {selectedPackage === 'Family Theatre - 1599' || selectedPackage === 'Friends Theatre - 1599'
               ? 'Gold Package Price: ₹1000'
@@ -110,7 +142,7 @@ export default function PackageSelectionForm({
           <ul className="space-y-2 text-gray-600">
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
-              3 Hour Theatre
+              2.5 Hour Theatre
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
