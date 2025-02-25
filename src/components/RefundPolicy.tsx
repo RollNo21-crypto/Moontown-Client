@@ -76,9 +76,9 @@ const RefundPolicy = () => {
               To request a refund, please contact our customer support:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-600 ml-4">
-              <li>Call us at: +91 8217516064</li>
+              <li>Call us at: +91 9606993278</li>
               <li>Email: support@moontown.com</li>
-              <li>WhatsApp: +91 8217516064</li>
+              <li>WhatsApp: +91 9606993278</li>
             </ul>
             <p className="text-gray-600">
               Our team will process your request within 2-3 business days.
