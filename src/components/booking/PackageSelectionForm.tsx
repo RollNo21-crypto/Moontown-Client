@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users, Cake, Package, Camera } from 'lucide-react';
 import type { BookingFormData } from '../../types/booking';
+import PackageDetailsDisplay from './PackageDetailsDisplay';
 
 interface PackageSelectionFormProps {
   selectedPackage: string;
@@ -46,6 +47,9 @@ export default function PackageSelectionForm({
           <option value="Couples Theatre - 1111">Couples Theatre - ₹999</option>
           <option value="Friends Theatre - 1599">Friends Theatre - ₹1999</option>
         </select>
+        
+        {/* Display package details when a package is selected */}
+        {selectedPackage && <PackageDetailsDisplay selectedPackage={selectedPackage} />}
       </div>
 
       {/* Cake Selection */}

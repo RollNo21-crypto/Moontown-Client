@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, ArrowRight, ArrowLeft, Check, Calendar, Gift, Package, User } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import PersonalDetailsForm from '../components/booking/PersonalDetailsForm';
 import OccasionDetailsForm from '../components/booking/OccasionDetailsForm';
@@ -8,6 +8,7 @@ import BookingSummary from '../components/booking/BookingSummary';
 import ConfirmationModal from '../components/booking/ConfirmationModal';
 import { calculatePrice } from '../utils/pricing';
 import type { BookingFormData } from '../types/booking';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -45,10 +46,19 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [error, setError] = useState<string>('');
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
+  const [direction, setDirection] = useState<number>(1); // For slide animations
   
   // Database IDs
   const [bookingId, setBookingId] = useState<string>('');
   const [activityId, setActivityId] = useState<string | null>(null);
+  
+  // Steps configuration
+  const steps = [
+    { id: 1, title: 'Personal Details', icon: <User className="w-5 h-5" /> },
+    { id: 2, title: 'Occasion', icon: <Gift className="w-5 h-5" /> },
+    { id: 3, title: 'Package', icon: <Package className="w-5 h-5" /> },
+    { id: 4, title: 'Review', icon: <Check className="w-5 h-5" /> }
+  ];
 
   // Reset form when modal opens/closes
   useEffect(() => {
@@ -186,8 +196,26 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     if (currentStep === 1) {
       if (validatePersonalDetails()) {
         await trackActivity(1);
+        setDirection(1);
         setCurrentStep(2);
       }
+      return;
+    }
+    
+    if (currentStep === 2) {
+      if (formData.occasion && formData.location && formData.date && formData.time) {
+        setDirection(1);
+        setCurrentStep(3);
+        return;
+      } else {
+        setError('Please complete all occasion details');
+        return;
+      }
+    }
+    
+    if (currentStep === 3) {
+      setDirection(1);
+      setCurrentStep(4);
       return;
     }
 
@@ -260,15 +288,50 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   };
 
   if (!isOpen) return null;
+  
+  // Animation variants
+  const pageVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? '100%' : '-100%',
+      opacity: 0
+    })
+  };
+  
+  const pageTransition = {
+    type: 'tween',
+    ease: 'easeInOut',
+    duration: 0.3
+  };
+  
+  const handleNext = () => {
+    if (currentStep < 4) {
+      setDirection(1);
+      setCurrentStep(prev => prev + 1);
+    }
+  };
+  
+  const handleBack = () => {
+    if (currentStep > 1) {
+      setDirection(-1);
+      setCurrentStep(prev => prev - 1);
+    }
+  };
 
   return (
     <>
-      <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto">
-        <div className="min-h-screen px-4 text-center">
-          <span className="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
-          
-          <div className="inline-block w-full max-w-md text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+      <div className="fixed inset-0 bg-black bg-opacity-60 z-50 overflow-y-auto backdrop-blur-sm">
+        <div className="min-h-screen px-4 py-8 flex items-center justify-center">
+          <div className="w-full max-w-md text-left bg-white shadow-2xl rounded-2xl overflow-hidden">
             <div className="relative">
+              {/* Header */}
               <div className="sticky top-0 bg-white px-6 py-4 border-b z-10 rounded-t-2xl">
                 <button
                   onClick={handleClose}
@@ -278,69 +341,134 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 </button>
                 <h2 className="text-2xl font-bold text-gray-900">Book Your Private Theater</h2>
               </div>
+              
+              {/* Progress Indicator */}
+              <div className="px-6 pt-4 pb-2">
+                <div className="flex justify-between items-center mb-2">
+                  {steps.map((step, index) => (
+                    <div key={step.id} className="flex flex-col items-center">
+                      <div 
+                        className={`flex items-center justify-center w-10 h-10 rounded-full mb-1 transition-all duration-300 ${currentStep >= step.id 
+                          ? 'bg-indigo-600 text-white' 
+                          : 'bg-gray-200 text-gray-500'}`}
+                      >
+                        {step.icon}
+                      </div>
+                      <span className={`text-xs font-medium transition-all duration-300 ${currentStep >= step.id ? 'text-indigo-600' : 'text-gray-500'}`}>
+                        {step.title}
+                      </span>
+                      {index < steps.length - 1 && (
+                        <div className="hidden sm:block absolute h-0.5 w-1/4 bg-gray-200 top-[4.5rem] -z-10" 
+                             style={{ left: `${(index * 33) + 12.5}%` }}>
+                          <div 
+                            className="h-full bg-indigo-600 transition-all duration-500" 
+                            style={{ width: currentStep > step.id ? '100%' : '0%' }}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-              <div className="px-6 py-4 max-h-[calc(100vh-200px)] overflow-y-auto">
-                {error && (
-                  <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-md">
-                    {error}
-                  </div>
-                )}
+              {/* Error Message */}
+              {error && (
+                <div className="mx-6 mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-md">
+                  {error}
+                </div>
+              )}
 
+              {/* Form Content */}
+              <div className="px-6 py-4 max-h-[calc(100vh-280px)] overflow-y-auto">
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {currentStep === 1 ? (
-                    <PersonalDetailsForm
-                      bookingData={formData}
-                      onUpdate={handlePersonalDetailsUpdate}
-                    />
-                  ) : (
-                    <>
-                      <OccasionDetailsForm
-                        occasion={formData.occasion}
-                        onOccasionChange={handleOccasionChange}
-                        onDetailsChange={handleOccasionDetailsChange}
-                      />
+                  <AnimatePresence custom={direction} initial={false} mode="wait">
+                    <motion.div
+                      key={currentStep}
+                      custom={direction}
+                      variants={pageVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={pageTransition}
+                    >
+                      {currentStep === 1 && (
+                        <PersonalDetailsForm
+                          bookingData={formData}
+                          onUpdate={handlePersonalDetailsUpdate}
+                        />
+                      )}
                       
-                      <PackageSelectionForm
-                        selectedPackage={formData.package}
-                        needsPackage={formData.needs_package}
-                        onPackageChange={handlePackageChange}
-                        onAdditionalOptionChange={handleAdditionalOptionsChange}
-                        additionalOptions={formData.additional_options}
-                        cake={formData.cake}
-                      />
-
-                      <BookingSummary
-                        bookingData={formData}
-                        totalPrice={totalPrice}
-                      />
-                    </>
-                  )}
+                      {currentStep === 2 && (
+                        <OccasionDetailsForm
+                          occasion={formData.occasion}
+                          onOccasionChange={handleOccasionChange}
+                          onDetailsChange={handleOccasionDetailsChange}
+                        />
+                      )}
+                      
+                      {currentStep === 3 && (
+                        <PackageSelectionForm
+                          selectedPackage={formData.package}
+                          needsPackage={formData.needs_package}
+                          onPackageChange={handlePackageChange}
+                          onAdditionalOptionChange={handleAdditionalOptionsChange}
+                          additionalOptions={formData.additional_options}
+                          cake={formData.cake}
+                        />
+                      )}
+                      
+                      {currentStep === 4 && (
+                        <BookingSummary
+                          bookingData={formData}
+                          totalPrice={totalPrice}
+                        />
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
                 </form>
               </div>
 
-              <div className="sticky bottom-0 bg-white px-6 py-4 border-t">
+              {/* Navigation Buttons */}
+              <div className="sticky bottom-0 bg-white px-6 py-4 border-t shadow-inner">
                 {currentStep === 1 ? (
                   <button
                     onClick={handleSubmit}
-                    className="w-full bg-indigo-600 text-white py-3 px-4 rounded-xl hover:bg-indigo-700 transition duration-200 font-medium"
+                    className="w-full bg-indigo-600 text-white py-3 px-4 rounded-xl hover:bg-indigo-700 transition duration-200 font-medium flex items-center justify-center gap-2"
                   >
-                    Continue to Booking Details
+                    Continue <ArrowRight className="w-4 h-4" />
                   </button>
-                ) : (
-                  <div className="flex gap-4">
+                ) : currentStep === 4 ? (
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <button
                       type="button"
-                      onClick={() => setCurrentStep(1)}
-                      className="flex-1 bg-gray-100 text-gray-800 py-3 px-4 rounded-xl hover:bg-gray-200 transition duration-200 font-medium"
+                      onClick={handleBack}
+                      className="flex-1 bg-gray-100 text-gray-800 py-3 px-4 rounded-xl hover:bg-gray-200 transition duration-200 font-medium flex items-center justify-center gap-2"
                     >
-                      Back
+                      <ArrowLeft className="w-4 h-4" /> Back
                     </button>
                     <button
                       onClick={handleSubmit}
                       disabled={submitting}
-                      className="flex-1 bg-indigo-600 text-white py-3 px-4 rounded-xl hover:bg-indigo-700 transition duration-200 font-medium disabled:opacity-50"
+                      className="flex-1 bg-indigo-600 text-white py-3 px-4 rounded-xl hover:bg-indigo-700 transition duration-200 font-medium flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {submitting ? 'Confirming...' : 'Confirm Booking'}
+                      {submitting ? 'Processing...' : 'Confirm Booking'} {!submitting && <Check className="w-4 h-4" />}
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <button
+                      type="button"
+                      onClick={handleBack}
+                      className="flex-1 bg-gray-100 text-gray-800 py-3 px-4 rounded-xl hover:bg-gray-200 transition duration-200 font-medium flex items-center justify-center gap-2"
+                    >
+                      <ArrowLeft className="w-4 h-4" /> Back
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      className="flex-1 bg-indigo-600 text-white py-3 px-4 rounded-xl hover:bg-indigo-700 transition duration-200 font-medium flex items-center justify-center gap-2"
+                    >
+                      Continue <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 )}
